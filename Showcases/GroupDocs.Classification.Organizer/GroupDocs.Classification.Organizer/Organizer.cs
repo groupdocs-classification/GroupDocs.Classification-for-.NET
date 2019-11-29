@@ -17,7 +17,7 @@ namespace GroupDocs.Classification.Organizer
 
     /// <summary>
     /// Organizes documents. Copies each file from the <input> folder to the class folder in the <output> folder.
-    /// A document, that has been classified as Letter will be copied into <output>/Letter/ directory.
+    /// For example, a document that has been classified as Letter will be copied into <output>/Letter/ directory.
     /// </summary>
     class Organizer
     {
@@ -80,7 +80,6 @@ namespace GroupDocs.Classification.Organizer
                                Console.WriteLine(e.Message);
                            }
                        }
-
                    });
         }
     }
