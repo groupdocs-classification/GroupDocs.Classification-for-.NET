@@ -1,5 +1,6 @@
 ﻿using CommandLine;
 using System;
+using System.Diagnostics;
 using System.IO;
 
 namespace GroupDocs.Classification.Organizer
@@ -21,12 +22,15 @@ namespace GroupDocs.Classification.Organizer
     /// </summary>
     class Organizer
     {
-        private static readonly Classifier classifier = new Classifier();
+        private static Classifier classifier;
 
         static Organizer() { }
 
         static void Main(string[] args)
         {
+            Console.WriteLine("Classifier initialization is started.");
+
+            classifier = new Classifier();
             Console.WriteLine("Classifier was initialized.");
 
             // Parse input and output folders.
@@ -61,10 +65,13 @@ namespace GroupDocs.Classification.Organizer
                            var directory = Path.GetDirectoryName(path);
                            try
                            {
+                               Stopwatch sw = new Stopwatch();
+                               sw.Start();
                                // Classifies file with Documents taxonomy.
                                var result = classifier.Classify(filename, directory, taxonomy: Taxonomy.Documents);
                                Console.WriteLine(filename + ": " + result.BestClassName);
-
+                               Console.WriteLine($"Elapsed: {sw.ElapsedMilliseconds}ms");
+                               
                                // Creates class directory in the <output> folder(if it doesn't exist)
                                var organizedDirectory = Path.Combine(o.Output, result.BestClassName);
                                if (!Directory.Exists(organizedDirectory))
