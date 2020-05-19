@@ -3,6 +3,7 @@
     using System;
     using System.Diagnostics;
     using System.IO;
+    using System.Linq;
     using GroupDocs.Classification.DTO;
     using GroupDocs.Classification.Exceptions;
 
@@ -29,22 +30,82 @@
 
             //ExEnd:ApplyingLicense
 
+            var englishSentiments = new string[]
+            {
+                "Now that that is out of the way, this thing is a beast. It is fast and runs cool.",
+                "When I used compressed air a cloud of dust bellowed out from the card (small scuffs and scratches)."
+            };
+
+            var chineseSentiments = new string[]
+            {
+                "这款打开没有想象中好看，颜色太暗了。但是东西是好的，经常买。",
+                "就那样，有 瑕疵"
+            };
+            
+            var multilanguageSentiment = englishSentiments.Concat(chineseSentiments);
+
+            Console.WriteLine("SentimentClassifier with language auto-detection initialization is started.");
+
+            var sentimentClassifierAllLanguages = new SentimentClassifier(SentimentConfig.AllLanguages);
+
+            Console.WriteLine("SentimentClassifier(SentimentConfig.AllLanguages) was initialized.");
+
+            #region Classify raw texts with Classify method of SentimentClassifier class (language auto-detection).
+
+            Console.WriteLine("\nClassify raw text with Classify method of SentimentClassifier class (language auto-detection).");
+            foreach (var sentiment in multilanguageSentiment)
+            {
+                try
+                {
+                    Stopwatch sw = new Stopwatch();
+                    sw.Start();
+                    var result = sentimentClassifierAllLanguages.Classify(sentiment);
+                    Console.WriteLine($"Sentiment is {result.BestClassName} with probability {result.BestClassProbability}. Elapsed: {sw.ElapsedMilliseconds}ms\n");
+                }
+                catch (ApiException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            }
+
+            #endregion
+
+            Console.WriteLine("SentimentClassifier initialization for the Chinese language is started.");
+
+            var sentimentClassifierChineseLanguage = new SentimentClassifier(SentimentConfig.ChineseLanguage);
+
+            Console.WriteLine("SentimentClassifier(SentimentConfig.ChineseLanguage) was initialized.");
+
+            #region Classify raw texts with Classify method of SentimentClassifier class (Chinese language).
+
+            Console.WriteLine("\nClassify raw text with Classify method of SentimentClassifier class (Chinese language).");
+            foreach (var sentiment in chineseSentiments)
+            {
+                try
+                {
+                    Stopwatch sw = new Stopwatch();
+                    sw.Start();
+                    var result = sentimentClassifierChineseLanguage.Classify(sentiment);
+                    Console.WriteLine($"Sentiment is {result.BestClassName} with probability {result.BestClassProbability}. Elapsed: {sw.ElapsedMilliseconds}ms\n");
+                }
+                catch (ApiException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            }
+
+            #endregion
+
             Console.WriteLine("SentimentClassifier initialization is started.");
             
             sentimentClassifier = new SentimentClassifier();
 
             Console.WriteLine("SentimentClassifier was initialized.");
 
-            var sentiments = new string[]
-            {
-              "Now that that is out of the way, this thing is a beast. It is fast and runs cool.",
-              "When I used compressed air a cloud of dust bellowed out from the card (small scuffs and scratches)."
-            };
+            #region Classify raw texts with Classify method of SentimentClassifier class (English language).
 
-            #region Classify raw text with Classify method of SentimentClassifier class.
-
-            Console.WriteLine("\nClassify raw text with Classify method of SentimentClassifier class.");
-            foreach (var sentiment in sentiments)
+            Console.WriteLine("\nClassify raw text with Classify method of SentimentClassifier class (English language).");
+            foreach (var sentiment in englishSentiments)
             {
                 try
                 {
@@ -65,7 +126,7 @@
             #region Classify raw text with PositiveProbability method of SentimentClassifier class.
 
             Console.WriteLine("\nClassify raw text with PositiveProbability method of SentimentClassifier class.");
-            foreach (var sentiment in sentiments)
+            foreach (var sentiment in englishSentiments)
             {
                 try
                 {
@@ -84,7 +145,9 @@
             #endregion
 
             Console.WriteLine("Classifier initialization is started.");
-            
+
+            // Uncomment for the multilanguage sentiment classification.
+            // classifier = new Classifier(SentimentConfig.AllLanguages);
             classifier = new Classifier();
             
             Console.WriteLine("Classifier was initialized.");
@@ -105,6 +168,10 @@
 
             // Classify sentiment
             response = classifier.Classify("This is a new must-have thing.", 2, Taxonomy.Sentiment);
+            Console.WriteLine($"{response.BestClassName}, {response.BestClassProbability}");
+
+            // Classify sentiment in Chinese
+            response = classifier.Classify("这是新的必须要做的事情", 2, Taxonomy.Sentiment);
             Console.WriteLine($"{response.BestClassName}, {response.BestClassProbability}");
 
             #endregion
