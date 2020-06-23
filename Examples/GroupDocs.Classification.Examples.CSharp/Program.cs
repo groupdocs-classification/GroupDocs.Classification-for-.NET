@@ -39,7 +39,7 @@
             var chineseSentiments = new string[]
             {
                 "这款打开没有想象中好看，颜色太暗了。但是东西是好的，经常买。",
-                "就那样，有 瑕疵"
+                "老板服务是挺好，鞋子第一天穿两个脚后跟全部出血，血淋淋的教训 "
             };
             
             var multilanguageSentiment = englishSentiments.Concat(chineseSentiments);
