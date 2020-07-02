@@ -42,11 +42,17 @@ Due to the reasons specified above, GroupDocs .NET components cannot be used on 
 GroupDocs provides unlimited free technical support for all its products. The support is available to all users, including evaluation. If you need help with GroupDocs.Classification, consider the following:
 
 *   The main avenue for support is the [GroupDocs.Forums](https://forum.groupdocs.com/) . Post your question in the [GroupDocs.Classification Forum](https://forum.groupdocs.com/c/classification) and it will be answered within a few hours. The questions are answered directly by the GroupDocs.Classification development team.
+
 *   Please note, GroupDocs does not provide technical support over the phone. Phone support is only available for sales and purchase questions.
+
 *   When expecting a reply in the forums, please allow for time zone differences.
 
 If you have an issue with GroupDocs.Classification, follow these simple steps to make sure it is resolved in the most efficient way:
+
 *   Make sure you use the latest GroupDocs.Classification version before reporting the issue, see GroupDocs.Classification for .NET NuGet to find out about the latest version.
+
 *   Have a look through the forums, this documentation and API Reference before reporting the issue; maybe your question was already answered.
+
 *   When reporting an issue, please include the original document and possibly a fragment of your code that causes the problem. If you need to attach multiple files, zip them into one. It is safe to attach your documents in GroupDocs.Forums since only you and GroupDocs developers will have access to the attached files.
+
 *   Please try to report one issue per thread. If you have another issue, report it in a separate thread.

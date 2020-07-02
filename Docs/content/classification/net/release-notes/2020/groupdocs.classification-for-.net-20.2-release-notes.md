@@ -2,7 +2,7 @@
 id: groupdocs-classification-for-net-20-2-release-notes
 url: classification/net/groupdocs-classification-for-net-20-2-release-notes
 title: GroupDocs.Classification for .NET 20.2 Release Notes
-weight: 100
+weight: 1
 description: ""
 keywords: 
 productName: GroupDocs.Classification for .NET

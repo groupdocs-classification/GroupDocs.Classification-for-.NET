@@ -13,7 +13,7 @@ hideChildren: False
 This is the first version of new generation GroupDocs.Classification for .NET. The most notable features are:
 
 *   Simplified and flexible API.
-*   IAB-2 and Documents [taxonomies ]({{< ref "classification/net/developer-guide/advanced-usage/taxonomies.md" >}})support.
+*   IAB-2 and Documents [taxonomies ]({{< ref "classification/net/developer-guide/taxonomies.md" >}})support.
 *   [Multiple document formats support]({{< ref "classification/net/getting-started/supported-document-formats.md" >}}).
 *   Classification performance optimization.
 *   Designed as native .NET library without any unmanaged code.

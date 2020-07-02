@@ -2,7 +2,7 @@
 id: groupdocs-classification-for-net-20-3-release-notes
 url: classification/net/groupdocs-classification-for-net-20-3-release-notes
 title: GroupDocs.Classification for .NET 20.3 Release Notes
-weight: 90
+weight: 2
 description: " "
 keywords: Sentiment Analysis Classification IAB-2 Documents .NET News Categorization
 productName: GroupDocs.Classification for .NET

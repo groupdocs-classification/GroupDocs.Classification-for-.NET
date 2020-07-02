@@ -52,5 +52,5 @@ using (FileStream fileStream = File.OpenRead("GroupDocs.Classification.lic"))
 
 Calling License.SetLicense multiple times is not harmful but simply wastes processor time. If you are developing a Windows Forms or console application, call License.SetLicense in your startup code, before using GroupDocs.Classification classes. 
 
-When developing an ASP.NET application, you can call License.SetLicense from the Global.asax.cs (Global.asax.vb) file in the Application_Start protected method. It is called once when the application starts.   
+When developing an ASP.NET application, you can call License.SetLicense from the Global.asax.cs (Global.asax.vb) file in the Application\_Start protected method. It is called once when the application starts.   
 Do not call License.SetLicense from within Page\_Load methods since it means the license will be loaded every time a web page is loaded.
