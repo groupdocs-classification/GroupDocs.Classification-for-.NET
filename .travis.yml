@@ -26,7 +26,7 @@ install:
 
 script:
 - cp -r Docs/content/* $ROOT_DIR/content/
-- hugo --source $ROOT_DIR --minify
+- hugo --source $ROOT_DIR --minify --config config.toml,ignore-total-config.toml
 - mkdir -p $SRC_DIR/search-json
 - mv $SRC_DIR/index.json $SRC_DIR/search-json/$PRODUCT-$PLATFORM.json
 
