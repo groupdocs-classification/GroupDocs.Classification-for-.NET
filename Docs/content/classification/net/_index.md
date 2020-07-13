@@ -10,7 +10,8 @@ hideChildren: True
 ---
 #  Home 
 
-{{< alert style="info" >}}Welcome to the GroupDocs.Classification for .NETGroupDocs.Classification for .NET is a powerful and intuitive library used for texts and documents classification with several taxonomies. Documents could be in various formats,including Microsoft Word and OpenDocument Writer file formats, PDF documents, RTF and TXT. Classification results can be easily customized with multiple and flexible options.{{< /alert >}}
+![](classification/net/images/home.png) **Welcome to the GroupDocs.Classification for .NET**
+GroupDocs.Classification for .NET is a powerful and intuitive library used for texts and documents classification with several taxonomies. Documents could be in various formats,including Microsoft Word and OpenDocument Writer file formats, PDF documents, RTF and TXT. Classification results can be easily customized with multiple and flexible options.{{< /alert >}}
 
 ## GroupDocs.Classification for .NET Resources
 
