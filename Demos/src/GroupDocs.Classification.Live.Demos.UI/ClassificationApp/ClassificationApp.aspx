@@ -37,14 +37,8 @@
 			            <div class="container-fluid GroupDocsApps">
 				            <div class="container">
 					            <div class="row">
-					            <% if (Request.Url.AbsoluteUri.Contains("://products.groupdocs.app"))
-					            { %>
 						            <app-root apiUrl="https://api.groupdocs.app/classify/v1/classification/" fileFormat="<%=fileFormat.Trim()%>" 
                                         invalidFileExtension="<%= Resources["InvalidFileExtension"] %>"></app-root>
-					            <% } else { %>
-						            <app-root apiUrl="https://api-qa.groupdocs.app/classify/v1/classification/" fileFormat="<%=fileFormat.Trim()%>" 
-                                        invalidFileExtension="<%= Resources["InvalidFileExtension"] %>"></app-root>
-					            <% } %>
 					            </div>
 				            </div>
 			            </div>
