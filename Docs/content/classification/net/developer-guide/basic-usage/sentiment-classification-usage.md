@@ -41,4 +41,4 @@ var response = sentimentClassifier.Classify("This is a new must-have thing.", ta
 Console.WriteLine($"The best class name:{response.BestClassName}, probability: {response.BestClassProbability}");
 ```
 
-**SentimentClassifier **class is thread-safe.
+**SentimentClassifier** class is thread-safe.
