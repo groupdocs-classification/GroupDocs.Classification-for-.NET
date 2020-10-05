@@ -74,3 +74,13 @@ Sentiment taxonomy:
 Negative,
 Positive
 ```
+
+### Sentiment taxonomy with 3 classes (Negative/Neutral/Positive)
+
+Sentiment3 taxonomy:
+
+```csharp
+Negative,
+Neutral,
+Positive
+```

@@ -2,7 +2,7 @@
 id: groupdocs-classification-for-net-20-10-release-notes
 url: classification/net/groupdocs-classification-for-net-20-10-release-notes
 title: GroupDocs.Classification for .NET 20.10 Release Notes
-weight: 4
+weight: 5
 description: " "
 keywords: Sentiment Analysis Classification IAB-2 Documents .NET News Categorization
 productName: GroupDocs.Classification for .NET
@@ -12,7 +12,7 @@ hideChildren: False
 
 *   A new 3 classes Sentiment Classification taxonomy was added (positive/neutral/negative).
 *   Sentiment Classification (Analysis) supports 4 languages now: English, Chinese, Spanish, and German.
-*   Sentiment Classification is now multilingual: there is no need to select language(s) and input text can be multilingual now.
+*   Sentiment Classification is now multilingual: there is no need to select language(s) and input text can be multilingual.
 
 ### All Changes
 
@@ -45,10 +45,10 @@ Taxonomy.Sentiment3 categorize sentiments into Negative, Neutral or Positive cla
 
 ```csharp
 var classifier = new Classifier();
-var response = classifier.Classify("This is a new must have thing.", bestClassesCount: 1, taxonomy: Taxonomy.Sentiment3);
+var response = classifier.Classify("This is a new must have thing.", taxonomy: Taxonomy.Sentiment3);
 Console.WriteLine(response.BestClassName);
 
-var response = classifier.Classify("Esto es algo nuevo que debe tener.", bestClassesCount: 1, taxonomy: Taxonomy.Sentiment3);
+response = classifier.Classify("Esto es algo nuevo que debe tener.", taxonomy: Taxonomy.Sentiment3);
 Console.WriteLine(response.BestClassName);
 ```
   

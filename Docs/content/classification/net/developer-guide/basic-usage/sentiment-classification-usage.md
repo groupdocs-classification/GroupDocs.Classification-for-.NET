@@ -8,24 +8,12 @@ keywords:
 productName: GroupDocs.Classification for .NET
 hideChildren: False
 ---
-Create an instance of **SentimentClassifier** class
+Create an instance of **SentimentClassifier** class. It is multilingual and supports English, Chinese, Spanish, and German.
 
 **Creates SentimentClassifier instance**
 
 ```csharp
 var sentimentClassifier = new SentimentClassifier();
-```
-
-**Creates SentimentClassifier instance for the Chinese language**
-
-```csharp
-var sentimentClassifier = new SentimentClassifier(SentimentConfig.ChineseLanguage);
-```
-
-**Creates an instance of the Sentiment Classifier with multi-language support and auto-detection is English or Chinese**
-
-```csharp
-var sentimentClassifier = new SentimentClassifier(SentimentConfig.AllLanguages);
 ```
 
 and call **PositiveProbability** method
@@ -43,6 +31,13 @@ or call **Classify** method
 
 ```csharp
 var response = sentimentClassifier.Classify("This is a new must-have thing.");
+Console.WriteLine($"The best class name:{response.BestClassName}, probability: {response.BestClassProbability}");
+```
+
+**Classifies sentiment by text with 3 classes taxonomy (Negative/Neutral/Positive)**
+
+```csharp
+var response = sentimentClassifier.Classify("This is a new must-have thing.", taxonomy: Taxonomy.Sentiment3);
 Console.WriteLine($"The best class name:{response.BestClassName}, probability: {response.BestClassProbability}");
 ```
 

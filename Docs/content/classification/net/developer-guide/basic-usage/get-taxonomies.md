@@ -16,4 +16,5 @@ The list of taxanomy classes can be get like the following code snippet: 
 Console.WriteLine(String.Join(" ", TaxonomyClasses.Iab2Classes));
 Console.WriteLine(String.Join(" ", TaxonomyClasses.DocumentsClasses));
 Console.WriteLine(String.Join(" ", TaxonomyClasses.SentimentClasses));
+Console.WriteLine(String.Join(" ", TaxonomyClasses.Sentiment3Classes));
 ```
