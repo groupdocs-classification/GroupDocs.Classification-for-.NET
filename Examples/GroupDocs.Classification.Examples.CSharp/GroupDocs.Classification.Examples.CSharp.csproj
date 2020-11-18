@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="GroupDocs.Classification" Version="20.10.0" />
+    <PackageReference Include="GroupDocs.Classification" Version="20.11.0" />
   </ItemGroup>
 
 </Project>
