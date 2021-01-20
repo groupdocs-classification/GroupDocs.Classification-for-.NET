@@ -10,7 +10,7 @@ hideChildren: False
 ---
 ### Major Features
 
-*   Sentiment Classification performance has been increased by 4 times.
+*   Metered pricing plan was updated.
 
 ### All Changes
 
